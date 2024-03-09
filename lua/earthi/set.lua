@@ -1,5 +1,8 @@
 vim.opt.guicursor = ""
+
 vim.opt.clipboard:append("unnamedplus")
+vim.api.nvim_set_keymap('n', 'ggyG', 'ggVG"+y', { noremap = true, silent = false })
+vim.api.nvim_set_keymap('v', 'y', '"+y', { noremap = true, silent = false })
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
