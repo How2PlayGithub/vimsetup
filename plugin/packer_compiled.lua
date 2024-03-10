@@ -79,6 +79,12 @@ _G.packer_plugins = {
     path = "/home/earthi/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["carbon-now.nvim"] = {
+    config = { "\27LJ\2\n`\0\0\5\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\3B\1\2\1K\0\1\0\foptions\1\0\0\1\0\1\ntheme\fDuotone\nsetup\15carbon-now\frequire\0" },
+    loaded = true,
+    path = "/home/earthi/.local/share/nvim/site/pack/packer/start/carbon-now.nvim",
+    url = "https://github.com/ellisonleao/carbon-now.nvim"
+  },
   catppuccin = {
     loaded = true,
     path = "/home/earthi/.local/share/nvim/site/pack/packer/start/catppuccin",
@@ -203,6 +209,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: carbon-now.nvim
+time([[Config for carbon-now.nvim]], true)
+try_loadstring("\27LJ\2\n`\0\0\5\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\3B\1\2\1K\0\1\0\foptions\1\0\0\1\0\1\ntheme\fDuotone\nsetup\15carbon-now\frequire\0", "config", "carbon-now.nvim")
+time([[Config for carbon-now.nvim]], false)
 -- Config for: guess-indent.nvim
 time([[Config for guess-indent.nvim]], true)
 try_loadstring("\27LJ\2\n>\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\17guess-indent\frequire\0", "config", "guess-indent.nvim")
