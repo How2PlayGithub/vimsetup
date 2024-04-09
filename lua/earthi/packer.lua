@@ -1,13 +1,16 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
+    -- packer setup
     use 'wbthomason/packer.nvim'
+    -- telescope
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.5',
-        -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
+    -- theme
     use { "catppuccin/nvim", as = "catppuccin" }
+    -- treesitter <3
     use {
         'nvim-treesitter/nvim-treesitter',
         run = function()
@@ -15,7 +18,9 @@ return require('packer').startup(function(use)
             ts_update()
         end,}
     use("nvim-treesitter/playground")
+    -- fast file jump
     use("ThePrimeagen/harpoon")
+    -- undotree
     use("mbbill/undotree")
     -- lsp setup
     use("VonHeikemen/lsp-zero.nvim")
@@ -31,6 +36,7 @@ return require('packer').startup(function(use)
     use("hrsh7th/cmp-nvim-lua")
     use("L3MON4D3/LuaSnip")
     use("rafamadriz/friendly-snippets")
+    require("luasnip.loaders.from_vscode").lazy_load()
 
     use {'neoclide/coc.nvim', branch = 'release'}
     use("neoclide/coc-pairs")
@@ -41,16 +47,16 @@ return require('packer').startup(function(use)
     }
     use("prettier/vim-prettier")
 
-    use {
-    "ellisonleao/carbon-now.nvim",
-    config = function()
-        local carbon = require('carbon-now')
-        carbon.setup({
-            options = {
-                    theme = 'Duotone',
-            }
-        })
-    end
-}
+    use {"ellisonleao/carbon-now.nvim", config = function() require('carbon-now').setup() end}
 
+    use('ThePrimeagen/vim-be-good')
+
+    -- multiline editing
+    use('mg979/vim-visual-multi')
+
+    -- see keys
+    use('jokajak/keyseer.nvim')
+
+    -- codeium
+    use('jcdickinson/codeium.nvim')
 end)
